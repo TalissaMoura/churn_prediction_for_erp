@@ -1,0 +1,5 @@
+name: churn_pred_env
+channels:
+  - conda-forge
+  - defaults
+prefix: /home/talissa/miniconda3/envs/churn_pred_env

@@ -1,0 +1,71 @@
+model_features:
+  CAT_FEATURES:
+  - !!binary |
+    dGlwb19kZV9lbXByZXNh
+  - !!binary |
+    cG9zc3VpX21haXNfZGVfdW1fc/NjaW8=
+  - !!binary |
+    ZnVuY2lvbuFyaW9z
+  - !!binary |
+    dXRpbGl6YV9zZXJ2aedvc19maW5hbmNlaXJvcw==
+  - !!binary |
+    cG9zc3VpY29udGFkb3I=
+  - !!binary |
+    ZmF6X2NvbmNpbGlh5+NvX2JhbmPhcmlh
+  - !!binary |
+    ZnJlcXXqbmNpYV9kZV91dGlsaXph5+NvX2RlX2ZlYXR1cmVfZG9fc2lzdGVtYV9t82R1bG9fZmlu
+    YW5jZWlybw==
+  - !!binary |
+    ZnJlcXXqbmNpYV9kZV91dGlsaXph5+NvX2RlX2ZlYXR1cmVfZG9fc2lzdGVtYV9lbWlzc+NvX2Rl
+    X25vdGFfZmlzY2Fs
+  - !!binary |
+    ZnJlcXXqbmNpYV9kZV91dGlsaXph5+NvX2RlX2ZlYXR1cmVfZG9fc2lzdGVtYV9pbnRlZ3Jh5+Nv
+    X2JhbmPhcmlh
+  - !!binary |
+    ZnJlcXXqbmNpYV9kZV91dGlsaXph5+NvX2RlX2ZlYXR1cmVfZG9fc2lzdGVtYV9t82R1bG9fZGVf
+    dmVuZGFz
+  - !!binary |
+    ZnJlcXXqbmNpYV9kZV91dGlsaXph5+NvX2RlX2ZlYXR1cmVfZG9fc2lzdGVtYV9yZWxhdPNyaW9z
+  - !!binary |
+    ZnJlcXXqbmNpYV9kZV91dGlsaXph5+NvX2RlX2ZlYXR1cmVfZG9fc2lzdGVtYV91dGlsaXph5+Nv
+    X2RlX2FwaXNfZGVfaW50ZWdyYefjbw==
+  - !!binary |
+    Y29udHJhdG8=
+  - !!binary |
+    ZW1pdGVfYm9sZXRvcw==
+  - !!binary |
+    dGlwb19kZV9wYWdhbWVudG8=
+  - !!binary |
+    Y2xmX21lc2VzX2RlX3Blcm1hbupuY2lh
+  NUM_FEATURES:
+  - !!binary |
+    ZnVuZGHn429fZGFfZW1wcmVzYQ==
+  - !!binary |
+    bWVzZXNfZGVfcGVybWFu6m5jaWE=
+  - !!binary |
+    cmVjZWl0YV9tZW5zYWw=
+  - !!binary |
+    cmVjZWl0YV90b3RhbA==
+  - !!binary |
+    aXNfcG9zc3VpY29udGFkb3JfbnVsbA==
+  - !!binary |
+    aXNfcmVjZWl0YV90b3RhbF9udWxs
+  - !!binary |
+    cXR5X3BvdWNvdXNv
+  - !!binary |
+    cXR5X3Vzb2ZyZXF1ZW50ZQ==
+  - !!binary |
+    aXNfcmVjZWl0YV9tZW5zYWxfbWFpb3Jfb3VfaWd1YWxfNzA=
+model_name: random_forest_clf_for_churn
+model_parameters:
+  fit_params:
+    class_weight: balanced
+    criterion: entropy
+    max_depth: 8
+    min_samples_split: 5
+    n_estimators: 548
+    random_state: 82
+  predict_params:
+    decision_threshold: 0.5230618563773725
+model_target: churn
+model_version: 1

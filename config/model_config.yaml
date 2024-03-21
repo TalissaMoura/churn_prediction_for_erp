@@ -32,12 +32,12 @@ model_features:
   - !!binary |
     Y29udHJhdG8=
   - !!binary |
-    ZW1pdGVfYm9sZXRvcw==
-  - !!binary |
     dGlwb19kZV9wYWdhbWVudG8=
   - !!binary |
-    Y2xmX21lc2VzX2RlX3Blcm1hbupuY2lh
+    Y2xmX21lc2VzX3Blcm1hbupuY2lh
   NUM_FEATURES:
+  - !!binary |
+    ZW1pdGVfYm9sZXRvcw==
   - !!binary |
     ZnVuZGHn429fZGFfZW1wcmVzYQ==
   - !!binary |
@@ -47,11 +47,11 @@ model_features:
   - !!binary |
     cmVjZWl0YV90b3RhbA==
   - !!binary |
+    cXR5X1BvdWNvVXNvX2ZlYXR1cmVz
+  - !!binary |
     aXNfcG9zc3VpY29udGFkb3JfbnVsbA==
   - !!binary |
     aXNfcmVjZWl0YV90b3RhbF9udWxs
-  - !!binary |
-    cXR5X3BvdWNvdXNv
   - !!binary |
     cXR5X3Vzb2ZyZXF1ZW50ZQ==
   - !!binary |
@@ -59,13 +59,68 @@ model_features:
 model_name: random_forest_clf_for_churn
 model_parameters:
   fit_params:
-    class_weight: balanced
+    class_weight: balanced_subsample
     criterion: entropy
-    max_depth: 8
-    min_samples_split: 5
-    n_estimators: 548
+    max_depth: 6
+    min_samples_split: 2
+    n_estimators: 176
     random_state: 82
+  fs_params:
+    select_cols_arr:
+    - true
+    - true
+    - true
+    - true
+    - true
+    - true
+    - false
+    - false
+    - true
+    - true
+    - false
+    - false
+    - true
+    - false
+    - true
+    - true
+    - false
+    - false
+    - true
+    - true
+    - false
+    - true
+    - true
+    - true
+    - true
+    - true
+    - true
+    - true
+    - true
+    - false
+    - true
+    - true
+    - false
+    - true
+    - true
+    - true
+    - true
+    - true
+    - true
+    - true
+    - true
+    - true
+    - true
+    - true
+    - true
+    - false
+    - true
+    - true
+    - false
+    - true
+    - true
+    - true
+    - true
   predict_params:
-    decision_threshold: 0.5230618563773725
+    decision_threshold: 0.5654776370137015
 model_target: churn
 model_version: 1

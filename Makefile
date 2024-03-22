@@ -60,7 +60,7 @@ create_environment:
 ifeq (True,$(HAS_CONDA))
 		@echo ">>> Detected conda, creating conda environment."
 ifeq (3,$(findstring 3,$(PYTHON_INTERPRETER)))
-	conda create env -f environment.yml
+	conda env create -f environment.yml
 else
 	 @echo ">>> Could not create conda environment, please install python3"
 endif

@@ -121,6 +121,6 @@ model_parameters:
     - true
     - true
   predict_params:
-    decision_threshold: 0.5841883965759204
+    decision_threshold: 0.5350923491917843
 model_target: churn
 model_version: 1

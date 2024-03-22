@@ -34,9 +34,10 @@ clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
 
-## Lint using flake8
+## Lint using black and isort
 lint:
-	flake8 src
+	${PYTHON_INTERPRETER} -m black .
+	${PYTHON_INTERPRETER} -m isort --profile black isort .
 
 ## Upload Data to S3
 sync_data_to_s3:
@@ -59,9 +60,9 @@ create_environment:
 ifeq (True,$(HAS_CONDA))
 		@echo ">>> Detected conda, creating conda environment."
 ifeq (3,$(findstring 3,$(PYTHON_INTERPRETER)))
-	conda create --name $(PROJECT_NAME) python=3
+	conda create env -f environment.yml
 else
-	conda create --name $(PROJECT_NAME) python=2.7
+	 @echo ">>> Could not create conda environment, please install python3"
 endif
 		@echo ">>> New conda env created. Activate with:\nsource activate $(PROJECT_NAME)"
 else

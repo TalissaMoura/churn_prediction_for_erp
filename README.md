@@ -83,4 +83,8 @@ Scripts e diretórios construídos/utilizados:
 
 A principal métrica a ser avaliada é a f1-score pois ela garante que atingirmos um bom equilíbrio entre falsos positivos e falsos negativos. Isso porque evita grandes gastos para manter clientes (falsos positivos) e evita perda em receita (falsos negativos).
 
-Em resumo, o modelo otimizado se baseou no RandomForestClassifier obtendo 0.66 de f1-score. Em relação aos modelos baselines, isso representou um ganho de 123% e 33% em relação ao modelo heurístico (baseado em regra de negócio) e decision tree.
+Em resumo, o modelo otimizado se baseou no RandomForestClassifier obtendo 0.66 de f1-score. Em relação aos modelos baselines, isso representou um ganho de 123% e 33% em relação ao modelo heurístico (baseado em regra de negócio) e decision tree respectivamente.
+
+## Sobre experimentos 
+
+Por fim, esse projeto inclui arquivos sobre futura aplicação desse projeto em produção dentro da pasta `./experiments`

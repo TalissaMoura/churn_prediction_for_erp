@@ -34,7 +34,7 @@ def rename_cols(dataframe: pd.DataFrame) -> pd.DataFrame:
     3. Replaces spaces in column names with underscores.
     4. Removes special characters (":", ".", and ",") from column names.
 
-    At the end a column named "Column:A " have changed to "column_A".
+    At the end a column named "Column:A " has changed to "column_A".
 
     Args:
         dataframe (pd.DataFrame): The input DataFrame whose columns are to be renamed.

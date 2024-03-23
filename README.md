@@ -11,7 +11,7 @@ O conjunto de dados utilizado está na pasta: `data/raw/custumer_churn_data-cust
 frequência de utilização de features, receita mensal, receita total e informações da empresa (ano de fundação, tipo de empresa e etc.)
 
 2. Sobre os requisitos para rodar esse projeto:
-O projeto em si foi baseado na venv conda. Para gerar esse ambiente localmente basta rodar `conda env create -f environment.yml`. Caso não seja possível, utilize o arquivo `requirements.txt` e rode o comando `pip install -r requirements.txt`
+O projeto em si foi baseado na venv conda. Para gerar esse ambiente localmente basta rodar `make create_environment`. Caso não seja possível, utilize o arquivo `requirements.txt` e rode o comando `pip install -r requirements.txt`
 
 3. Da organização dos arquivos:
 

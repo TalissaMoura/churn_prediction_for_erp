@@ -64,7 +64,7 @@ ifeq (3,$(findstring 3,$(PYTHON_INTERPRETER)))
 else
 	 @echo ">>> Could not create conda environment, please install python3"
 endif
-		@echo ">>> New conda env created. Activate with:\nsource activate $(PROJECT_NAME)"
+		@echo ">>> New conda env created. Activate with:\nsource activate [env_name]"
 else
 	$(PYTHON_INTERPRETER) -m pip install -q virtualenv virtualenvwrapper
 	@echo ">>> Installing virtualenvwrapper if not already installed.\nMake sure the following lines are in shell startup file\n\

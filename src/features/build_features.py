@@ -16,7 +16,7 @@ def convert_to_categoric(dataframe: pd.DataFrame, subset: Union[str, list]):
 
     Returns:
         pd.DataFrame: A new DataFrame with the subset columns changed to type float.
-    """   
+    """
     new_df = dataframe.copy()
     new_df[subset] = new_df[subset].astype("category")
     return new_df
@@ -55,7 +55,7 @@ def classify_col(
 
     Returns:
         pd.DataFrame: A new dataframe with new qualitative columns.
-    """    
+    """
     new_df = dataframe.copy()
     new_df[new_col_name] = np.nan
     for cat, range in map.items():
@@ -73,7 +73,7 @@ def create_missing_indicator(dataframe: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: new DataFrame with missing value indicator columns. The new column names
         have name "is_columnname_null".
-    """    
+    """
     new_df = dataframe.copy()
     is_null_in_cols = new_df.isnull().any()
     cols_with_null_values = list(is_null_in_cols[is_null_in_cols == True].index)
@@ -98,7 +98,7 @@ def count_class_frequency(
     Returns:
         pd.DataFrame: a new DataFrame with count frequency columns. The
         name of the columns have this pattern "qty_class_to_count".
-    """    
+    """
     new_df = dataframe.copy()
     str_class_to_count = class_to_count.strip().lower().replace(" ", "")
     new_df[f"qty_{str_class_to_count}"] = (
@@ -129,7 +129,7 @@ def create_eq_or_gt_feature(
 
     Returns:
         pd.DataFrame: new DataFrame that contain the new feature.
-    """    
+    """
     new_df = dataframe.copy()
     new_df[feature_name] = new_df[columns].gt(value) | new_df[columns].eq(value)
     new_df[feature_name] = new_df[feature_name].astype("int")

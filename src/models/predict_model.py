@@ -13,7 +13,7 @@ def make_predict(
     return_classes: Union[False, True] = False,
 ):
     """
-    Predict values for model in X_test. Calculates the predict_proba 
+    Predict values for model in X_test. Calculates the predict_proba
     and predict_class. If a different value of threshold is set than
     predict_classes will be from predict_proba (predict_proba > threshold).
 
@@ -27,7 +27,7 @@ def make_predict(
     Returns:
         y_pred_proba,y_pred: predicted values, can return the predict_proba and
         predict classes or only predict_proba or only predict_classes.
-    """    
+    """
 
     y_pred_proba = model.predict_proba(X_test)[:, 1]
 

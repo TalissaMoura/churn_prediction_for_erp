@@ -10,7 +10,7 @@ import pandas as pd
 NUM_FEATS = ["receita_mensal", "receita_total"]
 
 
-def drop_cols(dataframe: pd.DataFrame, subset:Union[str, list]) -> pd.DataFrame:
+def drop_cols(dataframe: pd.DataFrame, subset: Union[str, list]) -> pd.DataFrame:
     """
     Remove columns from DataFrame.
 
@@ -20,7 +20,7 @@ def drop_cols(dataframe: pd.DataFrame, subset:Union[str, list]) -> pd.DataFrame:
 
     Returns:
         pd.DataFrame: a new DataFrame with dropped columns.
-    """    
+    """
     new_df = dataframe.copy()
     new_df = new_df.drop(labels=subset, axis=1)
     return new_df
@@ -41,7 +41,7 @@ def rename_cols(dataframe: pd.DataFrame) -> pd.DataFrame:
 
     Returns:
         pd.DataFrame: A new DataFrame with the columns renamed according to the described steps.
-    """    
+    """
     new_df = dataframe.copy()
     new_cols_name = (
         pd.Series(dataframe.columns)
@@ -57,14 +57,14 @@ def rename_cols(dataframe: pd.DataFrame) -> pd.DataFrame:
 
 
 def clear_numeric_strings(
-    dataframe: pd.DataFrame, subset:Union[str, list]
+    dataframe: pd.DataFrame, subset: Union[str, list]
 ) -> pd.DataFrame:
     """
     This function clear numeric string that comes like this pattern: "R$ 76,86 " and changes
     to "76.86". For each column in the subset, these steps are applied:
-    1. Remove "R$". 
+    1. Remove "R$".
     2. Strips leading and trailing whitespaces from column names.
-    3. Replace "," to "." 
+    3. Replace "," to "."
 
     Args:
         dataframe (pd.DataFrame): Input dataframe to clear strings.
@@ -73,7 +73,7 @@ def clear_numeric_strings(
 
     Returns:
         pd.DataFrame: A new DataFrame with numeric strings cleaned in the specified columns.
-    """    
+    """
     new_df = dataframe.copy()
     if isinstance(subset, str):
         new_df[subset] = (
@@ -106,18 +106,18 @@ def convert_to_numeric(
 
     Returns:
         pd.DataFrame: A new DataFrame with the subset columns changed to type float.
-    """    
+    """
     new_df = dataframe.copy()
     new_df[subset] = new_df[subset].astype("float")
     return new_df
 
 
 def add_to_pipe(
-    dataframe: pd.DataFrame, func:callable, *args, **kwargs
+    dataframe: pd.DataFrame, func: callable, *args, **kwargs
 ) -> pd.DataFrame.pipe:
     """
     Add a function to be applied on dataframe to a pipeline using
-    the Pandas.DataFrame.pipe function. 
+    the Pandas.DataFrame.pipe function.
 
     Args:
         dataframe (pd.DataFrame): Input DataFrame to apply the function to
@@ -127,7 +127,7 @@ def add_to_pipe(
 
     Returns:
         pd.DataFrame.pipe: a pipeline with function to apply on input dataframe
-    """    
+    """
     return dataframe.pipe(func, *args, **kwargs)
 
 
@@ -140,12 +140,12 @@ def make_pipeline(dataframe: pd.DataFrame, functions: list[dict]) -> pd.DataFram
         The dicts have this pattern:
         {"function":func,"function_kwargs":{"keyword_1":value},"function_args":[value1,value2]}
         The dict must have a function but function_kwargs and function_args can be optional.
-        If function_kwargs in dict its value must be a dict and if function_args in 
+        If function_kwargs in dict its value must be a dict and if function_args in
         dict then its must be a iterable.
 
     Returns:
         pd.DataFrame: A new DataFrame with all the functions listed applied on input dataframe
-    """    
+    """
 
     new_df = dataframe.copy()
     for f in functions:
